@@ -55,8 +55,8 @@ namespace TestApplication
                         var user = userService.GetById(userId);
                         if (user == null)
                         {
-                            // return unauthorized if user no longer exists
-                            context.Fail("Unauthorized");
+                            // return error if user no longer exists
+                            context.Fail("Get Lost");
                         }
                         return Task.CompletedTask;
                     }
