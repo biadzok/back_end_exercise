@@ -52,7 +52,7 @@ namespace TestApplication.Controllers
                 await _context.SaveChangesAsync();
             }
 
-            return CreatedAtAction("GetAllOrders", request);
+            return CreatedAtAction("GetOrders", request);
         }
 
         [HttpPut("id")]
@@ -66,7 +66,7 @@ namespace TestApplication.Controllers
             {
                 _context.Entry(order).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
-                return CreatedAtAction("GetAllOrders", new { id = order.order_id }, order);
+                return CreatedAtAction("GetOrders", new { id = order.order_id }, order);
             }
         }
 

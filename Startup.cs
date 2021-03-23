@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Services;
 //using Services;
 using TestApplication.Data;
 
@@ -37,7 +38,7 @@ namespace TestApplication
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             // configure jwt authentication
-            /*var key = Encoding.ASCII.GetBytes(Configuration["Secret"]);
+            var key = Encoding.ASCII.GetBytes(Configuration["Secret"]);
             services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -69,7 +70,7 @@ namespace TestApplication
                     ValidateIssuer = false,
                     ValidateAudience = false
                 };
-            });*/
+            });
 
             // configure DI for application services
             //services.AddScoped<IUserService, UserService>();
